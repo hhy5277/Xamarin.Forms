@@ -393,12 +393,6 @@ namespace Xamarin.Forms
 			set => SetValue(ScaleYProperty, value);
 		}
 
-		public Style Style
-		{
-			get { return (Style)GetValue(StyleProperty); }
-			set { SetValue(StyleProperty, value); }
-		}
-
 		public int TabIndex
 		{
 			get => (int)GetValue(TabIndexProperty);
@@ -418,20 +412,6 @@ namespace Xamarin.Forms
 		protected virtual void OnTabStopPropertyChanged(bool oldValue, bool newValue) { }
 
 		protected virtual bool TabStopDefaultValueCreator() => true;
-
-		[TypeConverter(typeof(ListStringTypeConverter))]
-		public IList<string> StyleClass
-		{
-			get { return @class; }
-			set { @class = value; }
-		}
-
-		[TypeConverter(typeof(ListStringTypeConverter))]
-		public IList<string> @class
-		{
-			get { return _mergedStyle.StyleClass; }
-			set { _mergedStyle.StyleClass = value; }
-		}
 
 		public double TranslationX
 		{
