@@ -333,7 +333,9 @@ namespace Xamarin.Forms.Xaml
 		public static Type GetElementType(XmlType xmlType, IXmlLineInfo xmlInfo, Assembly currentAssembly,
 			out XamlParseException exception)
 		{
+#if NETSTANDARD2_0
 			bool hasRetriedNsSearch = false;
+#endif
 			IList<XamlLoader.FallbackTypeInfo> potentialTypes;
 
 #if NETSTANDARD2_0
